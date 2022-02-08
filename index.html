@@ -1,0 +1,624 @@
+<html>
+<head>
+<title>Kameleon 900FW Exploit Host (Auto Method) Lite</title>
+<link rel="shortcut icon" href="favicon.ico"></link>
+<link rel="stylesheet" href="btn.css">
+<script type="text/javascript" src="index.js"></script>
+<style>
+body{background-image: url("bg.jpg");background-repeat: no-repeat;background-size:70%;background-position: center;background-color: black;
+color:white;font-size:20px;text-align:center;margin:0;overflow:hidden;}
+.info{overflow: hidden;position: fixed;position: absolute;top: 45%;left: 50%;font-size: 25px;font-family: sans-serif;color: white;transform: translate(-50%, -50%);}
+
+</style>
+
+<script>
+if (window.applicationCache.status=='0')
+{
+  window.location.replace("cache.html");
+}
+function pldone() {
+  msgs.innerHTML= LoadedMSG;
+}
+
+function awaitpl() {
+  msgs.innerHTML= "You can send now any payload over netcat port 9020";
+}
+
+function jbdone() {
+  msgs2.style.display = "none";
+  mymenu.style.display = "block";
+  msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Exploit And Menu Loaded!!!</h1>";
+}
+
+</script>
+
+<script src="int64.js"></script>
+<script src="rop.js"></script>
+<script src="kexploit-auto.js"></script>
+<script src="webkit.js"></script>
+
+</head>
+
+<body onload="load_exploit();">
+  <script>checkserverstatus();</script>
+  <h1 id=msgs style='font-size:25px;text-align:center;color:white'>Kameleon 900FW Exploit Host (Auto Method) Lite</h1>
+  <div id="msgs2" class="info">Running Exploit And Menu, Please Wait ...</div>
+  <div id=mymenu style="text-align:center;display:none;">
+    <div text-align= center>Pass = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;Fail = <span id=failCounter></span></div>
+    <div style="width:100%;font-size:20px;color:white">
+    PS4 Firmware <span id="PS4fw"></span></div>
+    <br>
+    <div id="pldmenu" style=font-size:16px>
+    <div style=font-size:16px>BIN LOADER</div>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Receives .Bin payloads on port 9020 via NetCat'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_binserver9020(); return false">Binloader-9020</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Receives .Bin payloads on port 9021 via NetCat'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_binserver9021(); return false">Binloader-9021</button>
+    <br>
+    <div style=font-size:16px>GOLDHEN</div>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='GoldHen v2.0b Version - By SiSTRo'"; onmouseout="msgs.innerHTML='Kameleon PS4 900FW Jailbreak V4.6'" onclick="load_goldhenb(); return false">GoldHen V2.0B</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='GoldHen v2.0b2 Version - By SiSTRo'"; onmouseout="msgs.innerHTML='Kameleon PS4 900FW Jailbreak V4.6'" onclick="load_goldhenb2(); return false">GoldHen V2.0B2</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='GoldHen v2.1 (Latest) - By SiSTRo'"; onmouseout="msgs.innerHTML='Kameleon PS4 900FW Jailbreak V4.6'" onclick="load_goldhen21(); return false">GoldHen V2.1 (Latest)</button>
+    <br><br>  
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Orbis Tool Box v1190 - By OSM'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_orbistoolbox(); return false">Orbis-Tool-Box</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='App-2-Usb - Original Version By Stooged / 9.00 Port By Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_app2usb(); return false">App-2-Usb</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='App Dumper Only v1.8 - Original Version By xVortex / 9.00 Port Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_dumper(); return false">App-Dumper</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Disable-Updates v1.0 - By Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_disableupdates(); return false">Disable-Updates</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Enable-Updates v1.0 - By Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_enableupdates(); return false">Enable-Updates</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Enable Browser / 9.00 Port Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_enablebrowser(); return false">Enable-Browser</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Exit IDU / 9.00 Port Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_exitidu(); return false">Exit-IDU</button>
+    <br><br>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Rifrenamer / 9.00 Port Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_rifrenamer(); return false">Rif-Renamer</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Ftp v1.3 - Original Version By xVortex / 9.00 Port By Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_ftp(); return false">Ftp-Server</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='History-Blocker - v2.0 Original Version By Stooged / 9.00 Port By Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_historyblocker(); return false">History-Blocker</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Kernel-Dumper - v1.0 Original Version By Eversion / 9.00 Port By Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_kerneldumper(); return false">Kernel-Dumper</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='PSN Account Offline Web Activator - By Sleirsgoevy'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_webactivator(); return false">Web-Offline-Activator</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Ps4Debug v1.1.14 - By CTN123'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_ps4debug(); return false">Ps4Debug</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='DB-Backup v1.0 - By Leeful / 9.00 Port By Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_backup(); return false">DB-Backup</button>
+    <br><br>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='DB-Restore v1.0 - By Leeful / 9.00 Port Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_restore(); return false">DB-Restore</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='To-Dex v1.0 - By notzecoxao'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_todex(); return false">To-Dex</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='WebRTE v1.0 - By PS4 Trainer'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_webrte(); return false">WebRTE</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Permanent UART - 9.00 Port By Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_uart(); return false">Permanent-UART</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Disable ASLR - 9.00 Port By Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_disableaslr(); return false">Disable-ASLR</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Kernel-Module Dumper -  9.00 Port By Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_moduledumper(); return false">Kernel-Module-Dumper</button>
+    <br><br>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Linux Vram Loader 1GB - 9.00 Port By NazkyYT'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_Linux1gb(); return false">Linux 1GB Vram</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Linux Vram Loader 2GB - 9.00 Port By NazkyYT'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_Linux2gb(); return false">Linux 2GB Vram</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Linux Vram Loader 3GB - 9.00 Port By NazkyYT'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_Linux3gb(); return false">Linux 3GB Vram</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Linux Vram Loader 4GB - 9.00 Port By NazkyYT'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_Linux4gb(); return false">Linux 4GB Vram</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='Linux Vram Loader 5GB - 9.00 Port By NazkyYT'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_Linux5gb(); return false">Linux 5GB Vram</button>
+    </div>
+    <br>
+    <p style="text-align:center;font-size:25px;color:white">Massive Thanks - Znullptr, ChendoChap, Specter, Sleirsgoevy, theflow0, SiSTRo, Al-Azif, PRB-Borg, Leeful, Nazky And Many More...</p>
+    <p style="text-align:center;font-size:20px;color:white">https://twitter.com/KameleonRe</p>
+    </div>
+    <script>
+    var UA = navigator.userAgent.substring(navigator.userAgent.indexOf('5.0 (') + 19, navigator.userAgent.indexOf(') Apple')).replace("layStation 4/","");
+    if (UA == "9.00"){PS4fw.innerHTML="v"+UA+" Detected"};if(UA != "9.00"){PS4fw.innerHTML="Spoofed To v"+UA};
+    </script>
+    <script>
+    if (localStorage.passcount == null || localStorage.passcount == undefined) localStorage.passcount=0;
+     if (localStorage.passCounter == null || localStorage.passCounter == undefined ){
+      passCounter.innerHTML=localStorage.passcount;}
+    if (localStorage.failcount == null || localStorage.failcount == undefined) localStorage.failcount=0;
+     if (localStorage.failCounter == null || localStorage.failCounter == undefined ){
+      failCounter.innerHTML=localStorage.failcount;}
+    </script>
+    
+<script>
+var exec_type = "";
+
+function load_exploit(){
+  if (window.applicationCache.status!='0')
+  {
+  setTimeout(poc, 1500);
+  }
+}
+
+function load_goldhenb(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading GoldHen V2.0B. Please wait!!!</h1>";
+LoadedMSG="GoldHen V2.0B Loaded";
+PLfile = "pl_goldhen20b.bin";
+if (sessionStorage.goldhen != "loaded")
+{
+  loadPayloadauto();
+
+}else{
+  goldhendone();
+  return;
+}
+}
+
+function load_goldhenb2(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading GoldHen V2.0B2. Please wait!!!</h1>";
+LoadedMSG="GoldHen V2.0B2 Loaded";
+PLfile = "pl_goldhen20b2.bin";
+if (sessionStorage.goldhen != "loaded")
+{
+  loadPayloadauto();
+
+}else{
+  goldhendone();
+  return;
+}
+}
+
+function load_goldhen21(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading GoldHen V2.1. Please wait!!!</h1>";
+LoadedMSG="GoldHen V2.1 Loaded";
+PLfile = "pl_goldhen21.bin";
+if (sessionStorage.goldhen != "loaded")
+{
+  loadPayloadauto();
+  
+}else{
+  goldhendone();
+  return;
+}
+}
+
+function load_binserver9021(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading NetCat Bin Server Port 9021!!!</h1>";
+LoadedMSG="You Can Send Now Payloads Via Netcat To Port 9021";
+PLfile = "pl_miraldr.bin";
+
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_binserver9020(){
+    msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading NetCat Bin Server Port 9020!!!</h1>";
+    var payload_buffer = chain.syscall(477, 0x0, 0x300000, 0x7, 0x1000, 0xFFFFFFFF, 0);
+    var payload_loader = p.malloc32(0x1000);
+    var loader_writer = payload_loader.backing;
+    loader_writer[0] = 0x56415741;
+    loader_writer[1] = 0x83485541;
+    loader_writer[2] = 0x894818EC;
+    loader_writer[3] = 0xC748243C;
+    loader_writer[4] = 0x10082444;
+    loader_writer[5] = 0x483C2302;
+    loader_writer[6] = 0x102444C7;
+    loader_writer[7] = 0x00000000;
+    loader_writer[8] = 0x000002BF;
+    loader_writer[9] = 0x0001BE00;
+    loader_writer[10] = 0xD2310000;
+    loader_writer[11] = 0x00009CE8;
+    loader_writer[12] = 0xC7894100;
+    loader_writer[13] = 0x8D48C789;
+    loader_writer[14] = 0xBA082474;
+    loader_writer[15] = 0x00000010;
+    loader_writer[16] = 0x000095E8;
+    loader_writer[17] = 0xFF894400;
+    loader_writer[18] = 0x000001BE;
+    loader_writer[19] = 0x0095E800;
+    loader_writer[20] = 0x89440000;
+    loader_writer[21] = 0x31F631FF;
+    loader_writer[22] = 0x0062E8D2;
+    loader_writer[23] = 0x89410000;
+    loader_writer[24] = 0x2C8B4CC6;
+    loader_writer[25] = 0x45C64124;
+    loader_writer[26] = 0x05EBC300;
+    loader_writer[27] = 0x01499848;
+    loader_writer[28] = 0xF78944C5;
+    loader_writer[29] = 0xBAEE894C;
+    loader_writer[30] = 0x00001000;
+    loader_writer[31] = 0x000025E8;
+    loader_writer[32] = 0x7FC08500;
+    loader_writer[33] = 0xFF8944E7;
+    loader_writer[34] = 0x000026E8;
+    loader_writer[35] = 0xF7894400;
+    loader_writer[36] = 0x00001EE8;
+    loader_writer[37] = 0x2414FF00;
+    loader_writer[38] = 0x18C48348;
+    loader_writer[39] = 0x5E415D41;
+    loader_writer[40] = 0x31485F41;
+    loader_writer[41] = 0xC748C3C0;
+    loader_writer[42] = 0x000003C0;
+    loader_writer[43] = 0xCA894900;
+    loader_writer[44] = 0x48C3050F;
+    loader_writer[45] = 0x0006C0C7;
+    loader_writer[46] = 0x89490000;
+    loader_writer[47] = 0xC3050FCA;
+    loader_writer[48] = 0x1EC0C748;
+    loader_writer[49] = 0x49000000;
+    loader_writer[50] = 0x050FCA89;
+    loader_writer[51] = 0xC0C748C3;
+    loader_writer[52] = 0x00000061;
+    loader_writer[53] = 0x0FCA8949;
+    loader_writer[54] = 0xC748C305;
+    loader_writer[55] = 0x000068C0;
+    loader_writer[56] = 0xCA894900;
+    loader_writer[57] = 0x48C3050F;
+    loader_writer[58] = 0x006AC0C7;
+    loader_writer[59] = 0x89490000;
+    loader_writer[60] = 0xC3050FCA;
+    chain.syscall(74, payload_loader, 0x4000, (0x1 | 0x2 | 0x4));
+    var pthread = p.malloc(0x10);
+    //
+    {
+        chain.fcall(window.syscalls[203], payload_buffer, 0x300000);
+        chain.fcall(libKernelBase.add32(OFFSET_lk_pthread_create), pthread, 0x0, payload_loader, payload_buffer);
+    }
+    chain.run();
+    awaitpl();
+}
+
+function load_webactivator(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading PSN Account Offline Web Activator. Please wait 20-30 seconds!!!</h1>";
+var link = document.createElement('a');
+document.body.appendChild(link);
+link.href = '900.html';
+link.click();
+}
+
+function load_orbistoolbox(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Orbis Tool Box v1190. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Orbis Tool Box v1190 Loaded";
+PLfile = "pl_OrbisToolbox.bin";
+
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_disableupdates(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Disable-Updates. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Disable-Updates Loaded";
+PLfile = "pl_disableupdates.bin";
+
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_enableupdates(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Enable-Updates. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Enable-Updates Loaded";
+PLfile = "pl_enableupdates.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_backup(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading DB-Backup. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="DB-Backup Loaded";
+PLfile = "pl_backup.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_app2usb(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading App-To-Usb. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="App-To-Usb Loaded";
+PLfile = "pl_app2usb.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_dumper(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading App Dumper. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="App Dumper Loaded";
+PLfile = "pl_appdumper.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_exitidu(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Exitidu. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Exitidu Loaded";
+PLfile = "pl_exitidu.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_rifrenamer(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Rifrenamer. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Rifrenamer Loaded";
+PLfile = "pl_rifrenamer.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_enablebrowser(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Enable-Browser. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Enable-Browser Loaded";
+PLfile = "pl_enablebrowser.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_ftp(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Ftp. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Ftp Loaded";
+PLfile = "pl_ftp.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_historyblocker(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading History-Blocker. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="History-Blocker Loaded";
+PLfile = "pl_historyblocker.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_kerneldumper(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Kernel-Dumper. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Kernel-Dumper Loaded";
+PLfile = "pl_kerneldumper.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_moduledumper(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Kernel Module-Dumper. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Kernel Module-Dumper Loaded";
+PLfile = "pl_moduledumper.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_uart(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Permanent UART. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Permanent UART Loaded";
+PLfile = "pl_permanentuart.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_Linux1gb(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Linux 1gb. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Linux 1gb Loaded";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+PLfile = "pl_LinuxLoader.js";
+loadPayloadDataSleirs(PLfile);
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+PLfile = "pl_LinuxLoader.bin";
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_Linux2gb(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Linux 2gb. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Linux 2gb Loaded";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+PLfile = "pl_LinuxLoader2gb.js";
+loadPayloadDataSleirs(PLfile);
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+PLfile = "pl_LinuxLoader2gb.bin";
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_Linux3gb(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Linux 3gb. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Linux 3gb Loaded";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+PLfile = "pl_LinuxLoader3gb.js";
+loadPayloadDataSleirs(PLfile);
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+PLfile = "pl_LinuxLoader3gb.bin";
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_Linux4gb(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Linux 4gb. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Linux 4gb Loaded";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+PLfile = "pl_LinuxLoader4gb.js";
+loadPayloadDataSleirs(PLfile);
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+PLfile = "pl_LinuxLoader4gb.bin";
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_Linux5gb(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Linux 5gb. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Linux 5gb Loaded";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+PLfile = "pl_LinuxLoader5gb.js";
+loadPayloadDataSleirs(PLfile);
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+PLfile = "pl_LinuxLoader5gb.bin";
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_ps4debug(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading CTN Ps4Debug v1.1.14. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="CTN Ps4Debug v1.1.14 Loaded";
+PLfile = "pl_ps4debug.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_restore(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading DB-Restore. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="DB-Restore Loaded";
+PLfile = "pl_restore.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_todex(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Enable-Dex. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="ToDex Loaded";
+PLfile = "pl_todex.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_webrte(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading WebRTE. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="WebRTE Loaded";
+PLfile = "pl_webrte.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+
+function load_disableaslr(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading Disable-ASLR. Please wait 20-30 seconds!!!</h1>";
+LoadedMSG="Disable-ASLR Loaded";
+PLfile = "pl_disableaslr.bin";
+if (sessionStorage.plrunmethod == "sandboxesc")
+{
+exec_type = "payload";
+loadPayloadauto();
+}
+else if (sessionStorage.plrunmethod == "ghen20binserver")
+{
+LoadpaylodsGhen20(PLfile);
+}
+}
+</script>
+    
+</body>
+</html>
