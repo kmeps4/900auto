@@ -56,8 +56,9 @@ function jbdone() {
     <div style=font-size:16px>GOLDHEN</div>
     <button class="btnkme" onMouseOver="msgs.innerHTML='GoldHen v2.0b Version - By SiSTRo'"; onmouseout="msgs.innerHTML='Kameleon PS4 900FW Jailbreak V4.6'" onclick="load_goldhenb(); return false">GoldHen V2.0B</button>
     <button class="btnkme" onMouseOver="msgs.innerHTML='GoldHen v2.0b2 Version - By SiSTRo'"; onmouseout="msgs.innerHTML='Kameleon PS4 900FW Jailbreak V4.6'" onclick="load_goldhenb2(); return false">GoldHen V2.0B2</button>
-    <button class="btnkme" onMouseOver="msgs.innerHTML='GoldHen v2.1 (Latest) - By SiSTRo'"; onmouseout="msgs.innerHTML='Kameleon PS4 900FW Jailbreak V4.6'" onclick="load_goldhen21(); return false">GoldHen V2.1 (Latest)</button>
-    <br><br>  
+    <button class="btnkme" onMouseOver="msgs.innerHTML='GoldHen v2.1.1 (Latest) - By SiSTRo'"; onmouseout="msgs.innerHTML='Kameleon PS4 900FW Jailbreak V4.6'" onclick="load_goldhen211(); return false">GoldHen V2.1.1 (Latest)</button>
+    <br>  
+    <div style=font-size:16px>PAYLOADS</div>
     <button class="btnkme" onMouseOver="msgs.innerHTML='Orbis Tool Box v1190 - By OSM'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_orbistoolbox(); return false">Orbis-Tool-Box</button>
     <button class="btnkme" onMouseOver="msgs.innerHTML='App-2-Usb - Original Version By Stooged / 9.00 Port By Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_app2usb(); return false">App-2-Usb</button>
     <button class="btnkme" onMouseOver="msgs.innerHTML='App Dumper Only v1.8 - Original Version By xVortex / 9.00 Port Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_dumper(); return false">App-Dumper</button>
@@ -142,10 +143,10 @@ if (sessionStorage.goldhen != "loaded")
 }
 }
 
-function load_goldhen21(){
-msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading GoldHen V2.1. Please wait!!!</h1>";
-LoadedMSG="GoldHen V2.1 Loaded";
-PLfile = "pl_goldhen21.bin";
+function load_goldhen211(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading GoldHen V2.1.1 Please wait!!!</h1>";
+LoadedMSG="GoldHen V2.1.1 Loaded";
+PLfile = "pl_goldhen211.bin";
 if (sessionStorage.goldhen != "loaded")
 {
   loadPayloadauto();
@@ -247,6 +248,15 @@ function load_binserver9020(){
     }
     chain.run();
     awaitpl();
+}
+
+
+function load_mainmenu(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Going to Main Menu!!!</h1>";
+var link = document.createElement('a');
+document.body.appendChild(link);
+link.href = '../index.html';
+link.click();  
 }
 
 function load_webactivator(){
