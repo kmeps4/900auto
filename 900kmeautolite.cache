@@ -10,10 +10,6 @@ exploit.js
 favicon.ico
 frontend.js
 index.html
-index.js
-int64.js
-kexploit-auto.js
-kexploit.js
 malloc.js
 mira.js
 netcat.js
@@ -27,20 +23,13 @@ pl_enablebrowser.bin
 pl_enableupdates.bin
 pl_exitidu.bin
 pl_ftp.bin
-pl_goldhen20b.bin
-pl_goldhen20b2.bin
-pl_goldhen211.bin
+pl_goldhen212.bin
 pl_historyblocker.bin
 pl_kerneldumper.bin
-pl_LinuxLoader.bin
 pl_LinuxLoader.js
-pl_LinuxLoader2gb.bin
 pl_LinuxLoader2gb.js
-pl_LinuxLoader3gb.bin
 pl_LinuxLoader3gb.js
-pl_LinuxLoader4gb.bin
 pl_LinuxLoader4gb.js
-pl_LinuxLoader5gb.bin
 pl_LinuxLoader5gb.js
 pl_miraldr.bin
 pl_moduledumper.bin
@@ -52,11 +41,9 @@ pl_rifrenamer.bin
 pl_todex.bin
 pl_webrte.bin
 relocator.js
-rop.js
 rop_sleirs.js
 syscalls.js
 syscalls2.js
-webkit.js
 
 NETWORK:
 *
