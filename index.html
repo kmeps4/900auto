@@ -116,10 +116,10 @@ function loadPayloadDataSleirs(pl) // preload payload data
 		}
 	}
 
-function load_goldhen212(){
-msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading GoldHen V2.1.2 Please wait!!!</h1>";
-LoadedMSG="GoldHen V2.1.2 Loaded";
-PLfile = "pl_goldhen212.bin";
+function load_goldhen220(){
+msgs.innerHTML="<h1 style='font-size:25px;text-align:center;'>Loading GoldHen V2.2 Please wait!!!</h1>";
+LoadedMSG="GoldHen V2.2 Loaded";
+PLfile = "pl_goldhen220.bin";
 loadPayloadData();
 }
 
@@ -398,6 +398,7 @@ loadPayloadData();
 
 <body onload="setTimeout(poc, 1500);">
   <h1 id=msgs style='font-size:25px;text-align:center;color:white'>Kameleon 900FW Exploit Host (Auto Method) Lite</h1>
+  <button class="btnkme" onMouseOver="msgs.innerHTML='Back to Main Menu'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_mainmenu(); return false">Back to Main Menu</button>
   <div id="progress" class="info" > Loading Menu...</div>
   <div id=mymenu style="text-align:center;display:none;">
     <div text-align= center>Pass = <span id=passCounter></span>&nbsp;&nbsp;:&nbsp;&nbsp;Fail = <span id=failCounter></span></div>
@@ -410,8 +411,9 @@ loadPayloadData();
     <button class="btnkme" onMouseOver="msgs.innerHTML='Receives .Bin payloads on port 9021 via NetCat'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_binserver9021(); return false">Binloader-9021</button>
     <br>
     <div style=font-size:16px>GOLDHEN</div>
-    <button class="btnkme" onMouseOver="msgs.innerHTML='GoldHen v2.1.2 (Latest) - By SiSTRo'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_goldhen212(); return false">GoldHen V2.1.2 (Latest)</button>
+    <button class="btnkme" onMouseOver="msgs.innerHTML='GoldHen v2.2 (Latest) - By SiSTRo'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_goldhen220(); return false">GoldHen V2.2 (Latest)</button>
     <br><br>  
+    <div style=font-size:16px>PAYLOADS</div>
     <button class="btnkme" onMouseOver="msgs.innerHTML='Orbis Tool Box v1190 - By OSM'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_orbistoolbox(); return false">Orbis-Tool-Box</button>
     <button class="btnkme" onMouseOver="msgs.innerHTML='App-2-Usb - Original Version By Stooged / 9.00 Port By Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_app2usb(); return false">App-2-Usb</button>
     <button class="btnkme" onMouseOver="msgs.innerHTML='App Dumper Only v1.8 - Original Version By xVortex / 9.00 Port Al Azif'"; onmouseout="msgs.innerHTML='Kameleon 900FW Exploit Host (Auto Method) Lite'" onclick="load_dumper(); return false">App-Dumper</button>
