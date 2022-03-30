@@ -1,6 +1,5 @@
 CACHE MANIFEST 
-# Kameleon 900V AUTO V1.0
-# 02/04/2022-14:27:00.78 
+# Kameleon 900FW AUTO
 
 900.html
 bg.jpg
@@ -23,7 +22,7 @@ pl_enablebrowser.bin
 pl_enableupdates.bin
 pl_exitidu.bin
 pl_ftp.bin
-pl_goldhen220.bin
+pl_goldhen222.bin
 pl_historyblocker.bin
 pl_kerneldumper.bin
 pl_LinuxLoader.js
@@ -47,9 +46,4 @@ syscalls2.js
 
 NETWORK:
 *
-
-SETTINGS:
-prefer-online:
-
-# Date: 06/02/2022  10:00:00.00
 
