@@ -9,8 +9,12 @@ exploit.js
 favicon.ico
 frontend.js
 index.html
+int64.js
+jbc_ldr.js
+mira_ldr.js
+kexploit-launcher.js
+kexploit.js
 malloc.js
-mira.js
 netcat.js
 payload.js
 pl_app2usb.bin
@@ -30,20 +34,32 @@ pl_LinuxLoader2gb.js
 pl_LinuxLoader3gb.js
 pl_LinuxLoader4gb.js
 pl_LinuxLoader5gb.js
-pl_miraldr.bin
 pl_moduledumper.bin
 pl_OrbisToolbox.bin
 pl_permanentuart.bin
+pl_pkg_backup.bin
 pl_ps4debug.bin
+pl_psxita_LinuxLoader.js
+pl_psxita_LinuxLoader2gb.js
+pl_psxita_LinuxLoader3gb.js
+pl_psxita_LinuxLoader4gb.js
+pl_psxita_LinuxLoader5gb.js
 pl_restore.bin
 pl_rifrenamer.bin
 pl_todex.bin
 pl_webrte.bin
+pl_wtsb.bin
 relocator.js
+rop.js
 rop_sleirs.js
 syscalls.js
 syscalls2.js
 
 NETWORK:
 *
+
+SETTINGS:
+prefer-online:
+
+# Date: 06/15/2022  10:00:00.00
 
