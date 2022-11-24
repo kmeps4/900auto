@@ -1,5 +1,5 @@
 CACHE MANIFEST 
-# Kameleon 900FW AUTO
+# Kameleon 900FW AUTO LITE
 
 900.html
 bg.jpg
@@ -11,10 +11,10 @@ frontend.js
 index.html
 int64.js
 jbc_ldr.js
-mira_ldr.js
 kexploit-launcher.js
 kexploit.js
 malloc.js
+mira_ldr.js
 netcat.js
 payload.js
 pl_app2usb.bin
@@ -27,6 +27,7 @@ pl_enableupdates.bin
 pl_exitidu.bin
 pl_ftp.bin
 pl_goldhen224.bin
+pl_goldhen225b7.bin
 pl_historyblocker.bin
 pl_kerneldumper.bin
 pl_LinuxLoader.js
@@ -44,6 +45,10 @@ pl_psxita_LinuxLoader2gb.js
 pl_psxita_LinuxLoader3gb.js
 pl_psxita_LinuxLoader4gb.js
 pl_psxita_LinuxLoader5gb.js
+pl_psxita_pro_1gb.js
+pl_psxita_pro_2gb.js
+pl_psxita_pro_3gb.js
+pl_psxita_pro_4gb.js
 pl_restore.bin
 pl_rifrenamer.bin
 pl_todex.bin
@@ -61,5 +66,5 @@ NETWORK:
 SETTINGS:
 prefer-online:
 
-# Date: 06/15/2022  10:00:00.00
+# Date: 10/29/2022  10:00:00.00
 
